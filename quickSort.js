@@ -1,3 +1,5 @@
+//worst case  O(n^2)
+//Avg case O(n logn)
 function quickSort(arr) {
   //base case
   if (arr.length < 2) return arr;
