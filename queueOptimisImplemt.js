@@ -1,6 +1,8 @@
+
+
 class Queue {
   constructor() {
-    this.items = [];
+    this.items = {};
     this.rear = 0;
     this.front = 0;
   }
@@ -43,6 +45,7 @@ const queue = new Queue();
 console.log(queue.isEmpty());
 
 queue.enequeue(1);
+queue.display();
 console.log(queue.dequeue());
 console.log(queue.isEmpty());
 
@@ -53,5 +56,8 @@ queue.enequeue(30);
 
 queue.display();
 
-console.log(queue.size());
-console.log(queue.peek())
+console.log(queue.dequeue());
+queue.display();
+
+console.log('size',queue.size());
+console.log('peek',queue.peek())
