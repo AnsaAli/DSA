@@ -110,6 +110,27 @@ class LinkedList {
     return value
   }
 
+  //remove from an index
+  remove(index){
+    if(index < 0 || index > this.size){
+        return console.log('Index is invalid')
+    }
+
+    let removeNode;
+    if(index === 0){
+        this.removeFromFront()
+    }else if (index > 0){
+        let prev = this.head;
+        for(let i =0 ; i < index - 1; i++){
+            prev = prev.next
+        }
+        removeNode = prev.next ;
+        prev.next = removeNode.next
+    }
+    this.size--;
+    return removeNode.value
+  }
+
   //to print the linked list
   print() {
     if (this.isEmpty()) {
@@ -155,5 +176,11 @@ linkedList.removeFromEnd()
 linkedList.print();
 
 linkedList.removeFromFront()
+linkedList.print();
+
+linkedList.remove(2);
+linkedList.print();
+
+linkedList.remove(1);
 linkedList.print();
 
