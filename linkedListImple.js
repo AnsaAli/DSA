@@ -156,6 +156,19 @@ class LinkedList {
     }
   }
 
+  reverse(){
+    let prev = null;
+    let curr = this.head;
+    while(curr){
+        let next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next
+    }
+    //need to change the head pointer 
+    this.head = prev
+  }
+
   //to print the linked list
   print() {
     if (this.isEmpty()) {
@@ -187,8 +200,8 @@ linkedList.prepend(0);
 linkedList.insert(80, 3);
 linkedList.print();
 
-linkedList.removeValue(70)
-linkedList.print();
+linkedList.reverse();
+linkedList.print()
 
 
 
