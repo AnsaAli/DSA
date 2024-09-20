@@ -41,6 +41,19 @@ class LinkedList{
         this.size++;
     }
 
+    //add value at the end of the list
+    append(value){
+        const node = new Node(value);
+        if(this.isEmpty()){
+           this.head = node;
+           this.tail = node;
+        }else{
+           this.tail.next = node;
+           this.tail = node;
+        }
+        this.size++
+    }
+
     //to print the linked list
     print(){
         if(this.isEmpty()){
@@ -62,11 +75,15 @@ const linkedList = new LinkedList()
 
 
 linkedList.prepend(10);
-linkedList.print()
-
 linkedList.prepend(20);
 linkedList.prepend(30);
 linkedList.print();
 
 console.log(linkedList.isEmpty())
 console.log(linkedList.getSize())
+
+linkedList.append(40);
+linkedList.print();
+
+linkedList.prepend(0);
+linkedList.print();
