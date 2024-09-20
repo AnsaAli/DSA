@@ -54,6 +54,34 @@ class LinkedList{
         this.size++
     }
 
+    //add value in a given index position
+    insert(value, index){
+        const node = new Node(value);
+
+        if(index < 0 || index > this.size ){
+            return console.log('Invalid index')
+        }
+        if(index === 0){
+            this.prepend(value)
+        }
+
+        else if (index > 0){
+            let prev = this.head;
+
+            //loop must exist just before the given index
+            for(let i =0; i< index - 1; i++){
+                    prev = prev.next
+            }
+
+            // index 2 > prev = 1 node.next = prev.next
+            node.next = prev.next;
+            prev.next = node;
+            this.size ++
+        }
+
+
+    }
+
     //to print the linked list
     print(){
         if(this.isEmpty()){
@@ -87,3 +115,13 @@ linkedList.print();
 
 linkedList.prepend(0);
 linkedList.print();
+
+linkedList.insert(15,0)
+linkedList.print();
+
+linkedList.insert(15,10)
+linkedList.print();
+
+linkedList.insert(80,3)
+linkedList.print();
+
