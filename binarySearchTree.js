@@ -95,6 +95,24 @@ class BinarySearchTree {
 
     }
   }
+
+  //find the min value
+  minValue(root){
+    if(!root.left){
+        return root.value
+    }else{
+        return this.minValue(root.left)
+    }
+  }
+
+  //find the max
+  maxValue(root){
+    if(!root.right){
+        return root.value;
+    }else{
+        return this.maxValue(root.right)
+    }
+  }
 }
 
 const bst = new BinarySearchTree();
@@ -111,4 +129,5 @@ bst. levelOrder()
 // console.log(bst.search(bst.root, 10))
 // console.log(bst.search(bst.root, 50))
 
-// console.log(bst.isEmpty())
+console.log('min value',bst.minValue(bst.root));
+console.log('max value',bst.maxValue(bst.root))
