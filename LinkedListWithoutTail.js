@@ -10,7 +10,7 @@ class LinkedList {
         this.head = null
     }
 
-    append(value){
+    prepend(value){
         const newNode = new Node(value);
 
         if(!this.head){
@@ -20,6 +20,20 @@ class LinkedList {
         newNode.next = this.head;
         this.head = newNode;
     }
+    
+    append(value){
+        const newNode = new Node(value);
+        if(!this.head){
+            this.head = newNode;
+            return
+        }
+        let curr = this.head;
+        while(curr.next){
+            curr = curr.next
+        }
+        curr.next = newNode
+    }
+
 }
 
 let LL = new LinkedList();
