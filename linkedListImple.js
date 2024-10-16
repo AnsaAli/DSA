@@ -183,6 +183,17 @@ class LinkedList {
     }
     console.log(listValues);
   }
+
+  findMid(){
+    let slow = this.head;
+    let fast = this.head
+    
+    while(fast.next && fast.next.next){
+        slow = slow.next
+        fast = fast.next.next
+    }
+    console.log(slow.value)
+}
 }
 
 const linkedList = new LinkedList();
