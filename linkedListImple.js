@@ -160,10 +160,10 @@ class LinkedList {
     let prev = null;
     let curr = this.head;
     while(curr){
-        let next = curr.next;
+        let nextPointer = curr.next;
         curr.next = prev;
         prev = curr;
-        curr = next
+        curr = nextPointer
     }
     //need to change the head pointer 
     this.head = prev
@@ -185,15 +185,15 @@ class LinkedList {
   }
 
   findMid(){
-    let slow = this.head;
-    let fast = this.head
-    
-    while(fast.next && fast.next.next){
-        slow = slow.next
-        fast = fast.next.next
+        let slow = this.head;
+        let fast = this.head
+        
+        while(fast.next && fast.next.next){
+            slow = slow.next
+            fast = fast.next.next
+        }
+        console.log(slow.value)
     }
-    console.log(slow.value)
-}
 }
 
 const linkedList = new LinkedList();

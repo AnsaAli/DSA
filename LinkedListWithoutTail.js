@@ -87,6 +87,18 @@ class LinkedList {
         }
     }
 
+    reverse(){
+        let prev = null;
+        let curr = this.head;
+        while(curr){
+            let nextPointer = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextPointer;
+        }
+        this.head = prev
+    }
+
     display(){
         let curr = this.head
         while(curr){
@@ -113,6 +125,9 @@ LL.addValue(1,5);
 // console.log(LL.head)
 LL.display()
 LL.findMiddle();
-console.log('------------------')
-LL.removeFrom(5)
-LL.display()
+// console.log('------------------')
+// LL.removeFrom(5)
+// LL.display()
+console.log('------------------reverse')
+LL.reverse();
+LL.display();
