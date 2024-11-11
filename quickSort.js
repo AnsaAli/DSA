@@ -16,10 +16,7 @@ function quickSort(arr) {
       rightArr.push(arr[i]);
     }
   }
-  console.log("left array", leftArr);
-  console.log("p", pivot);
-  console.log("right array", rightArr);
-  console.log('arr',leftArr , pivot , rightArr)
+ 
   return [...quickSort(leftArr), pivot, ...quickSort(rightArr)];
 }
 

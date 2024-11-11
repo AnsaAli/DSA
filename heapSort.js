@@ -2,6 +2,7 @@ function heapSort(arr) {
   let n = arr.length;
 
   for (let i = Math.floor(n / 2) - 1; i >= 0; i--) {
+    console.log('i',i)
     heapify(arr, n, i);
   }
   for (let i = n - 1; i > 0; i--) {
@@ -15,8 +16,11 @@ function heapSort(arr) {
 
 function heapify(arr, n, i) {
   let largest = i;
+  console.log('largest',largest)
   let left = 2 * i + 1;
+  console.log('left',left)
   let right = 2 * i + 2;
+  console.log('right',right)
 
   if(left < n && arr[left]>arr[largest]){
     largest = left
@@ -26,6 +30,7 @@ function heapify(arr, n, i) {
   }
   if(largest != i){
     [arr[i], arr[largest]] = [arr[largest],arr[i]];
+    console.log('swapped', [arr[i], arr[largest]] = [arr[largest],arr[i]])
     heapify(arr,n,largest)
   }
 }
