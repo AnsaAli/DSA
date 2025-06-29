@@ -113,3 +113,6 @@
 
 // console.log(proxy.message);  // "Hello"
 // console.log(proxy.nonExistentProperty); // "Property does not exist"
+
+
+console.log([] + [])

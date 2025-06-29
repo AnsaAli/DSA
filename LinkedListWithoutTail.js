@@ -28,6 +28,7 @@ class LinkedList {
             return
         }
         let curr = this.head;
+        //find the node which curr.next is true
         while(curr.next){
             curr = curr.next
         }
@@ -75,7 +76,7 @@ class LinkedList {
             while(curr && currIndex < index){
                 currIndex++
                 curr= curr.next
-            }
+            }b
             if(curr.next === null){
                 console.log('Invalid index')
                 return
